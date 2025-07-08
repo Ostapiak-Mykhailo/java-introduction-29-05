@@ -16,15 +16,13 @@ public class hometask2 {
         int width = Integer.parseInt(reader.readLine());
         System.out.println("height is: ");
         int height = Integer.parseInt(reader.readLine());
-        System.out.println("weight is: ");
-        int weight = Integer.parseInt(reader.readLine());
 
-        defineBagParameters(length, width, height, weight);
-
+        defineBagParameters(length, width, height);
     }
-
-    public static void defineBagParameters(int length, int width, int height, int weight) {
-        if (length <= 55 && width <= 40 && height <= 20 && weight <= 10) {
+    public static void defineBagParameters(int length, int width, int height) {
+        if (length <= 55 && width <= 20 && height <= 40) {
+            System.out.println("Сумка проходить як ручна поклажа");
+        } else if (length <= 40 && width <= 22 && height <= 53){
             System.out.println("Сумка проходить як ручна поклажа");
         } else {
             System.out.println("Сумка не проходить як ручна поклажа, будь ласка здайте її в багаж");
