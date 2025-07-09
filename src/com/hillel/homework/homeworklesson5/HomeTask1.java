@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class hometask1 {
+public class HomeTask1 {
 
     public static void main(String[] args) throws IOException {
 
@@ -24,10 +24,10 @@ public class hometask1 {
         double averageMark = (double) (mathMark + physicsMark + chemistryMark + englishMark + javaMark) / 5;
         System.out.println("Your average mark is " + averageMark);
 
-        calculationScholarship(averageMark);
+        calculateScholarship(averageMark);
     }
 
-    public static void calculationScholarship(double averageMark) {
+    public static void calculateScholarship(double averageMark) {
         if (averageMark >= 10 && averageMark <=12) {
             System.out.println("You will receive an increased scholarship");
         } else if (averageMark >= 8 && averageMark < 10) {

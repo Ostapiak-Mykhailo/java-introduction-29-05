@@ -1,12 +1,12 @@
 package com.hillel.homework.homeworklesson5;
 
-public class hometask3 {
+public class HomeTask3 {
     public static void main(String[] args) {
         // Задача із презентації "Гра на гроші"
-        DetermineGamersPoint(90);
+        determineGamersPoint(90);
 
     }
-    public static void DetermineGamersPoint (int gamerPoint){
+    public static void determineGamersPoint (int gamerPoint){
         if (gamerPoint > 1000) {
             System.out.println("Видати ігроку 50000$");
         } else if (gamerPoint >= 500 && gamerPoint <= 1000){
