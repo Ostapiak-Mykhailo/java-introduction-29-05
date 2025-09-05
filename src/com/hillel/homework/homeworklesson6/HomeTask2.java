@@ -2,7 +2,7 @@ package com.hillel.homework.homeworklesson6;
 
 import java.util.Scanner;
 
-public class homeTask2 {
+public class HomeTask2 {
 
     public static void main(String[] args) {
 
@@ -13,6 +13,7 @@ public class homeTask2 {
         System.out.println("operation: " + operation);
         doOperation(number1, operation, number2);
     }
+
     public static void doOperation(int number1, String operation, int number2) {
         switch (operation) {
             case "+":

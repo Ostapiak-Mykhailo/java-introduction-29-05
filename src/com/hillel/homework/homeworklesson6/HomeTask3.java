@@ -2,7 +2,7 @@ package com.hillel.homework.homeworklesson6;
 
 import java.util.Scanner;
 
-public class homeTask3 {
+public class HomeTask3 {
 
     public static void main(String[] args) {
 
@@ -11,7 +11,7 @@ public class homeTask3 {
         int apples = scanner.nextInt();
         int bigJar = apples / 5;
         int middleJar = (apples % 5) / 3;
-        int littleJar = ((apples % 5) % 3) / 1;
+        int littleJar = ((apples % 5) % 3);
         System.out.println("Великих банок " + bigJar);
         System.out.println("Середніх банок " + middleJar);
         System.out.println("Маленьких банок " + littleJar);
