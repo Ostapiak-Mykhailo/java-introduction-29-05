@@ -1,4 +1,4 @@
-package com.hillel.homeworklesson7;
+package com.hillel.homework.homeworklesson7;
 
 import java.io.BufferedReader;
 import java.io.IOException;
