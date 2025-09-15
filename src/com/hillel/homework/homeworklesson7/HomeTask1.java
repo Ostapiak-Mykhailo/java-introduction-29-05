@@ -11,25 +11,19 @@ public class HomeTask1 {
         int i = scanner.nextInt();
         while (i != random){
             int t = 3;
-           do {
-               System.out.println(t);
-               Thread.sleep(1000);
-               t--;
-               if(t <= 1){
-                   continue;
-               }
-           } while (t >=1);
+            do {
+                System.out.println(t);
+                Thread.sleep(1000);
+                t--;
+            } while (t >=1);
             System.out.println("Ви не вгадали. Спробуйте знову");
-             i = scanner.nextInt();
+            i = scanner.nextInt();
         }
         int t = 3;
         do {
             System.out.println(t);
             Thread.sleep(1000);
             t--;
-            if(t <= 1){
-                continue;
-            }
         } while (t >= 1);
         System.out.println("Вітаємо ви вгадали");
     }
