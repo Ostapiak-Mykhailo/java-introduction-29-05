@@ -1,6 +1,5 @@
 package com.hillel.homework.homeworklesson8;
 
-import java.util.Arrays;
 
 public class ExtraHomeTask2 {
     /*Используя цикл for вывести на экран квадрат из * 10 на 10.
@@ -9,29 +8,20 @@ public class ExtraHomeTask2 {
 
     public static void main(String[] args) {
 
-        String[] asterisk = new String[10];
-        String[] hash = new String[10];
-
-        asterisk = fillSquare(10);
-        hash = fillTriangle(10);
-
+        String[] asterisk = fillFigure(10, "* ");
+        String[] hash = fillFigure(10, "# ");
         printSquare(asterisk);
         printTriangle(hash);
     }
-    public static String[] fillSquare(int size) {
+
+    public static String[] fillFigure(int size, String string) {
         String[] str = new String[size];
         for (int i = 0; i < str.length; i++) {
-            str[i] = "* ";
+            str[i] = string;
         }
         return str;
     }
-    public static String[] fillTriangle(int size) {
-        String[] str = new String[size];
-        for (int i = 0; i < str.length; i++) {
-            str[i] = "# ";
-        }
-        return str;
-    }
+
     public static void printSquare(String[] asterisk) {
         for (int i = 0; i < asterisk.length; i++) {
             for (int j = 0; j < asterisk.length; j++) {
@@ -40,6 +30,7 @@ public class ExtraHomeTask2 {
             System.out.println();
         }
     }
+
     public static void printTriangle(String[] hash) {
 
         for (int i = 0; i < hash.length; i++) {

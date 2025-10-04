@@ -14,18 +14,21 @@ public class HomeTask1 {
         printTeamsAge(team2);
         printMessage(averageAgeTeam1, averageAgeTeam2);
     }
-    public static int[] getAge(int size){
+
+    public static int[] getAge(int size) {
         int[] team = new int[size];
         for (int i = 0; i < team.length; i++) {
             team[i] = (int) (Math.random() * (45 - 18 + 1) + 18);
         }
         return team;
     }
-    public static void printTeamsAge(int[] team){
+
+    public static void printTeamsAge(int[] team) {
 
         System.out.println("Team : " + Arrays.toString(team));
     }
-    public static int calculateAverageAge(int[] team){
+
+    public static int calculateAverageAge(int[] team) {
 
         int sum1 = 0;
 
@@ -35,14 +38,15 @@ public class HomeTask1 {
         int averageAgeTeam = sum1 / team.length;
         return averageAgeTeam;
     }
-    public static void printMessage(int averageAgeTeam1, int averageAgeTeam2){
+
+    public static void printMessage(int averageAgeTeam1, int averageAgeTeam2) {
 
         System.out.println("Average age of team 1 is: " + averageAgeTeam1);
         System.out.println("Average age of team 2 is: " + averageAgeTeam2);
 
-        if (averageAgeTeam1 > averageAgeTeam2){
+        if (averageAgeTeam1 > averageAgeTeam2) {
             System.out.println("Average age of team 1 is bigger than average age of team 2");
-        } else if (averageAgeTeam2 > averageAgeTeam1){
+        } else if (averageAgeTeam2 > averageAgeTeam1) {
             System.out.println("Average age of team 2 is bigger than average age of team 1");
         } else
             System.out.println("Average age of teams is the same");

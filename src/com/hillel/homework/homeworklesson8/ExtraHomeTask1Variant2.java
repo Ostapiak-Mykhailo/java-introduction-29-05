@@ -3,7 +3,7 @@ package com.hillel.homework.homeworklesson8;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ExtraHomeTask1 {
+public class ExtraHomeTask1Variant2 {
     /*Реалізувати механізм підбору чотирицифрового коду.
       Вивести в консоль кількість ітерацій.
       Наприклад, ми маємо pin = 9407, за скільки ітерацій програма підбере код.*/
@@ -27,14 +27,22 @@ public class ExtraHomeTask1 {
     public static void guessPassword(int[] password) {
         int[] guess = new int[4];
         int index = 0;
-        do {
-            for (int i = 0; i < password.length; i++) {
-                guess[i] = (int) (Math.random() * 10);
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                for (int k = 0; k < 10; k++) {
+                    for (int l = 0; l < 10; l++) {
+                        guess[0] = i;
+                        guess[1] = j;
+                        guess[2] = k;
+                        guess[3] = l;
+                        index++;
+                        if (Arrays.equals(password, guess)) {
+                            System.out.println("The computer guessed your password in " + index + " tries");
+                            return;
+                        }
+                    }
+                }
             }
-            index++;
-
-        } while (!Arrays.equals(password, guess));
-
-        System.out.println("The computer guessed your password in " + index + " tries");
+        }
     }
 }
