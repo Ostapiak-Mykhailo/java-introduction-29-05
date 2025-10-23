@@ -30,22 +30,23 @@ public class HomeTask1 {
 
     public static int[][] transposeArray(int[][] array, int n, int m) {
         int[][] trn = new int[m][n];
-        for (int i = 0; i < trn.length; i++) {
-            for (int j = 0; j < trn[i].length; j++) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
                 trn[j][i] = array[i][j];
             }
         }
         return trn;
     }
 
+    public static void printArray(String message, int[][] array) {
+        System.out.println(message);
+        for (int[] ints : array) {
+            System.out.println(Arrays.toString(ints));
+        }
+    }
+
     public static void printMessage(int[][] array, int[][] transposed) {
-        System.out.println("Here`s your array: ");
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(Arrays.toString(array[i]));
-        }
-        System.out.println("Here`s your array transposed: ");
-        for (int i = 0; i < transposed.length; i++) {
-            System.out.println(Arrays.toString(transposed[i]));
-        }
+        printArray("Here`s your array: ", array);
+        printArray("Here`s your array transposed: ", transposed);
     }
 }
