@@ -27,13 +27,12 @@ public class ArraySort {
         int temp = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
-                if (numbers[j - 1] > numbers[j]){
+                if (numbers[j - 1] > numbers[j]) {
                     temp = numbers[j - 1];
                     numbers[j - 1] = numbers[j];
                     numbers[j] = temp;
                 }
             }
-
         }
     }
 }
