@@ -1,4 +1,4 @@
-package com.hillel.homework.homeworklesson11;
+package com.hillel.homework.homeworklesson11.Dog;
 
 /*🐕 4. Клас Dog
 Поля: name, breed, age, energy

@@ -1,4 +1,4 @@
-package com.hillel.homework.homeworklesson11;
+package com.hillel.homework.homeworklesson11.Car;
 
 public class CarMain {
 

@@ -1,4 +1,4 @@
-package com.hillel.homework.homeworklesson11;
+package com.hillel.homework.homeworklesson11.Password;
 
 public class PasswordMain {
 

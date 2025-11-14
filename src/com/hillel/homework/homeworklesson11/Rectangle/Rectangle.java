@@ -1,4 +1,4 @@
-package com.hillel.homework.homeworklesson11;
+package com.hillel.homework.homeworklesson11.Rectangle;
 
 /*Завдання:
 Напиши клас, який описує прямокутник з полями width і height.

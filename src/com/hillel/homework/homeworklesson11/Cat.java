@@ -7,11 +7,9 @@ public class Cat {
     String breed;
 
     public Cat() {
-
     }
 
     public Cat(int age, String name) {
-
     }
 
     public Cat(int age, int weight, String name, String breed) {
