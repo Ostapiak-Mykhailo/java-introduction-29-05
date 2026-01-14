@@ -1,6 +1,6 @@
-package com.hillel.homework.lesson15.ExtraHomeTask;
+package com.hillel.homework.lesson15.extraHomeTask;
 
-public class Human extends Object implements Runnable, Swimmable {
+public class Human implements Runnable, Swimmable {
 
     @Override
     public void run() {

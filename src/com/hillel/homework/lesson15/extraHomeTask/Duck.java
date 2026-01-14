@@ -1,6 +1,6 @@
-package com.hillel.homework.lesson15.ExtraHomeTask;
+package com.hillel.homework.lesson15.extraHomeTask;
 
-public class Duck extends Object implements Flyable, Runnable, Swimmable {
+public class Duck implements Flyable, Runnable, Swimmable {
 
     @Override
     public void swim() {
