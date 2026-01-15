@@ -1,10 +1,10 @@
-package com.hillel.homework.homeworklesson14.Delivery;
+package com.hillel.homework.homeworklesson14.delivery;
 
 public class Delivery {
 
-    private final int weight;
+    private final double weight;
     private final int basicTariff = 12;
-    protected int price;
+    protected double price;
 
     public Delivery(int weight) {
         this.weight = weight;
@@ -14,7 +14,7 @@ public class Delivery {
         price = weight * basicTariff;
     }
 
-    public void printMessage() {
+    protected void printMessage() {
         System.out.println("Your delivery cost " + price + " UAH");
     }
 }

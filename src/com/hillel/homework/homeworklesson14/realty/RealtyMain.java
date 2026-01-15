@@ -1,4 +1,4 @@
-package com.hillel.homework.homeworklesson14.Realty;
+package com.hillel.homework.homeworklesson14.realty;
 
 public class RealtyMain {
 

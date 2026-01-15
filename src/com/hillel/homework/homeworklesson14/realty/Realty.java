@@ -1,16 +1,16 @@
-package com.hillel.homework.homeworklesson14.Realty;
+package com.hillel.homework.homeworklesson14.realty;
 
 public class Realty {
 
     private final int area;
-    int tax;
+    protected double tax;
     final int taxK = 3;
 
     public Realty(int area) {
         this.area = area;
     }
 
-    public void calculateTax() {
+    protected void calculateTax() {
         tax = area * taxK;
     }
 

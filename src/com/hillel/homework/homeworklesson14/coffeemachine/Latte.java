@@ -12,8 +12,4 @@ public class Latte extends Drink {
         System.out.println("Your latte is being prepared");
     }
 
-    @Override
-    public int getPrice() {
-        return price;
-    }
 }

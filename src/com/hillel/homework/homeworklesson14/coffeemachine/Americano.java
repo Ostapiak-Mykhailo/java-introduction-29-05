@@ -12,8 +12,4 @@ public class Americano extends Drink {
         System.out.println("Your americano is being prepared");
     }
 
-    @Override
-    public int getPrice() {
-        return price;
-    }
 }

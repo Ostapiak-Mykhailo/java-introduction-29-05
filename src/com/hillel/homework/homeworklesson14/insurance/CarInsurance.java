@@ -1,19 +1,19 @@
-package com.hillel.homework.homeworklesson14.Insurance;
+package com.hillel.homework.homeworklesson14.insurance;
 
-public class Car extends Insurance {
+public class CarInsurance extends Insurance {
 
     private final boolean anyAccinent;
     private final double bonus = 0.05;
 
-    public Car(int priceCar, boolean anyAccinent) {
+    public CarInsurance(int priceCar, boolean anyAccinent) {
         super(priceCar);
         this.anyAccinent = anyAccinent;
-        calculateInsurancePrice();
+        calculateAndSetInsurancePrice();
     }
 
     @Override
-    public void calculateInsurancePrice() {
-        super.calculateInsurancePrice();
+    public void calculateAndSetInsurancePrice() {
+        super.calculateAndSetInsurancePrice();
         if (anyAccinent) {
             insurancePrice = (int) (priceCar * basicCoef);
         } else {

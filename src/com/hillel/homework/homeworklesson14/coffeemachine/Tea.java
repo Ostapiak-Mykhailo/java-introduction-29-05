@@ -12,8 +12,4 @@ public class Tea extends Drink {
         System.out.println("Your tea is being prepared");
     }
 
-    @Override
-    public int getPrice() {
-        return price;
-    }
 }

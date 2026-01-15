@@ -12,8 +12,4 @@ public class Cappuccino extends Drink {
         System.out.println("Your cappuccino is being prepared");
     }
 
-    @Override
-    public int getPrice() {
-        return price;
-    }
 }

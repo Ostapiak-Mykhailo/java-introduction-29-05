@@ -1,4 +1,4 @@
-package com.hillel.homework.homeworklesson14.Delivery;
+package com.hillel.homework.homeworklesson14.delivery;
 
 /*Задача 1. Розрахунок вартості доставки вантажів
 Компанія займається доставкою вантажів. Є три типи відправлень:
@@ -30,8 +30,5 @@ public class DeliveryMain {
         parcel2.printMessage();
         parcel3.printMessage();
         parcel4.printMessage();
-
     }
-
-
 }

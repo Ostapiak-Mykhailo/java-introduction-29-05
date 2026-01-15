@@ -1,4 +1,4 @@
-package com.hillel.homework.homeworklesson14.Insurance;
+package com.hillel.homework.homeworklesson14.insurance;
 
 /*Задача 2. Розрахунок вартості страховки автомобіля
 Страхова компанія рахує ціну страховки за формулою:
@@ -23,12 +23,12 @@ public class InsuranceMain {
 
     public static void main(String[] args) {
 
-        Insurance car1 = new Car(20000, false);
-        Insurance car2 = new Car(20000, true);
-        Insurance truck1 = new Truck(400000, 4.5);
-        Insurance truck2 = new Truck(400000, 6.5);
-        Insurance electricCar1 = new ElectricCar(300000, 55);
-        Insurance electricCar2 = new ElectricCar(300000, 70);
+        Insurance car1 = new CarInsurance(20000, false);
+        Insurance car2 = new CarInsurance(20000, true);
+        Insurance truck1 = new TruckInsurance(400000, 4.5);
+        Insurance truck2 = new TruckInsurance(400000, 6.5);
+        Insurance electricCar1 = new ElectricCarInsurance(300000, 55);
+        Insurance electricCar2 = new ElectricCarInsurance(300000, 70);
 
         car1.printMessage();
         car2.printMessage();
