@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-private List<Book> books;
-private List<Author> authors;
-private List<Genre> genres;
+private final List<Book> books;
+private final List<Author> authors;
+private final List<Genre> genres;
 
     public Library() {
         this.genres = new ArrayList<>();

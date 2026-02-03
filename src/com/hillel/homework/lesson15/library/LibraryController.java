@@ -1,14 +1,11 @@
 package com.hillel.homework.lesson15.library;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class LibraryController {
 
     private final LibraryView view;
     private final Library library;
-    private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
 
     public LibraryController(LibraryView view, Library library) {
         this.view = view;
@@ -18,31 +15,53 @@ public class LibraryController {
     public void libraryRun() throws IOException {
         while (true) {
             view.suggestOptions();
-            defineOption();
+            selectObject();
         }
     }
 
-    public void defineOption() throws IOException {
-        int input = view.getInput();
+    public void selectObject() throws IOException {
+        ObjectType input = view.selectOptionType();
         switch (input) {
-            case 1 -> createAuthor();
-            case 2 -> createBook();
-            case 3 -> createGenre();
-            case 4 -> showAllAuthors();
-            case 5 -> showAllBooks();
-            case 6 -> showAllGenres();
-            case 7 -> deleteAuthor();
-            case 8 -> deleteBook();
-            case 9 -> deleteGenre();
+            case AUTHOR -> doAuthorAction();
+            case BOOK -> doBookAction();
+            case GENRE -> doGenreAction();
             default -> System.out.println("Error:( Please try again");
         }
     }
 
+    public void doAuthorAction() throws IOException {
+        view.suggestAuthorOption();
+        Action action = view.selectAction();
+        switch (action) {
+            case CREATE -> createAuthor();
+            case SHOW -> showAllAuthors();
+            case DELETE -> deleteAuthor();
+        }
+    }
+
+    public void doGenreAction() throws IOException {
+        view.suggestGenreOption();
+        Action action = view.selectAction();
+        switch (action){
+            case CREATE -> createGenre();
+            case SHOW -> showAllGenres();
+            case DELETE -> deleteGenre();
+        }
+    }
+
+    public void doBookAction() throws IOException {
+        view.suggestBookOption();
+        Action action = view.selectAction();
+        switch (action){
+            case CREATE -> createBook();
+            case SHOW -> showAllBooks();
+            case DELETE -> deleteBook();
+        }
+    }
+
     private Author createAuthor() throws IOException {
-        System.out.println("Please enter author`s name");
-        String name = READER.readLine();
-        System.out.println("Please enter author`s last name");
-        String lastName = READER.readLine();
+        String name = view.getAuthorName();
+        String lastName = view.getAuthorLastName();
         Author author = new Author();
         author.setName(name);
         author.setLastName(lastName);
@@ -51,10 +70,8 @@ public class LibraryController {
     }
 
     private Genre createGenre() throws IOException {
-        System.out.println("Enter the name of the genre");
-        String name = READER.readLine();
-        System.out.println("Please describe this genre");
-        String description = READER.readLine();
+        String name = view.getNameOfGenre();
+        String description = view.getDescriptionOfGenre();
         Genre genre = new Genre();
         genre.setName(name);
         genre.setDescription(description);
@@ -63,17 +80,11 @@ public class LibraryController {
     }
 
     private void createBook() throws IOException {
-
         Book book = new Book();
 
-        System.out.println("Year of publication");
-        int publicationYear = LibraryView.getYearOfBook();
-
-        System.out.println("Please enter name of the book");
-        String name = READER.readLine();
-
-        System.out.println("What is this book about (description)?");
-        String description = READER.readLine();
+        int publicationYear = view.getYearOfBook();
+        String name = view.getNameOfBook();
+        String description = view.getDescriptionOfBook();
 
         System.out.println("Who is the author?");
         Author author = chooseOrCreateAuthorOfBook();
@@ -102,7 +113,7 @@ public class LibraryController {
                 for (int i = 0; i < library.getAuthors().size(); i++) {
                     System.out.println((i + 1) + " - " + library.getAuthors().get(i));
                 }
-                String str = READER.readLine();
+                String str = view.getInput();
                 int choice = Integer.parseInt(str);
                 if (choice > 0 && choice <= library.getAuthors().size()) {
                     authorChoice = library.getAuthors().get(choice - 1);
@@ -126,7 +137,7 @@ public class LibraryController {
                 for (int i = 0; i < library.getGenres().size(); i++) {
                     System.out.println((i + 1) + " - " + library.getGenres().get(i));
                 }
-                String str = READER.readLine();
+                String str = view.getInput();
                 int choice = Integer.parseInt(str);
                 if (choice > 0 && choice <= library.getGenres().size()) {
                     genreChoice = library.getGenres().get(choice - 1);
@@ -183,7 +194,7 @@ public class LibraryController {
                 for (int i = 0; i < library.getAuthors().size(); i++) {
                     System.out.println(i + 1 + " - " + library.getAuthors().get(i));
                 }
-                String str = READER.readLine();
+                String str = view.getInput();
                 int choice = Integer.parseInt(str);
                 if (choice > 0 && choice <= library.getAuthors().size()) {
                     System.out.println("The author " + library.getAuthors().get(choice - 1) + " was deleted successfully");
@@ -192,7 +203,7 @@ public class LibraryController {
                         library.getBooks().remove(book);
                         book.getGenre().getBooks().remove(book);
                     }
-                    library.getAuthors().remove(choice -1);
+                    library.getAuthors().remove(choice - 1);
                     isDeleted = true;
                 } else if (choice == 0) {
                     return;
@@ -213,10 +224,15 @@ public class LibraryController {
                 for (int i = 0; i < library.getBooks().size(); i++) {
                     System.out.println(i + 1 + " - " + library.getBooks().get(i));
                 }
-                String str = READER.readLine();
+                String str = view.getInput();
                 int choice = Integer.parseInt(str);
                 if (choice > 0 && choice <= library.getBooks().size()) {
                     System.out.println("The book " + library.getBooks().get(choice - 1) + " was deleted successfully");
+                    Book book = library.getBooks().get(choice - 1);
+                    Author author = book.getAuthor();
+                    Genre genre = book.getGenre();
+                    author.getBooks().remove(book);
+                    genre.getBooks().remove(book);
                     library.getBooks().remove(choice - 1);
                     isDeleted = true;
                 } else if (choice == 0) {
@@ -237,10 +253,14 @@ public class LibraryController {
                 for (int i = 0; i < library.getGenres().size(); i++) {
                     System.out.println(i + 1 + " - " + library.getGenres().get(i));
                 }
-                String str = READER.readLine();
+                String str = view.getInput();
                 int choice = Integer.parseInt(str);
                 if (choice > 0 && choice <= library.getGenres().size()) {
                     System.out.println("The genre " + library.getGenres().get(choice - 1) + " was deleted successfully");
+                    Genre genre = library.getGenres().get(choice - 1);
+                    for (Book book : genre.getBooks()) {
+                        library.getBooks().remove(book);
+                    }
                     library.getGenres().remove(choice - 1);
                     isDeleted = true;
                 } else if (choice == 0) {
